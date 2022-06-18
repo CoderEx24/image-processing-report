@@ -103,3 +103,12 @@
 %V 18
 %N 3
 %P 253-259
+
+%K sample
+%T The aliasing problem in computer generated shaded images
+%A Franklin C. Crow
+%D 1977
+%J Communications of the ACM
+%V 20
+%N 11
+%P 799-805
