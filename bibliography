@@ -89,7 +89,17 @@
 %A Takao Ishizaki
 %A Tomoyuki Nishita
 %D 1986
-%J SIGGRAPH
+%J Computer Graphics
 %V 20
 %N 4
 %P 207-214
+
+%K composite
+%T Compositing Digital Images
+%A Thomas Porter
+%A Tom Duff
+%D 1984
+%J Computer Graphics
+%V 18
+%N 3
+%P 253-259
