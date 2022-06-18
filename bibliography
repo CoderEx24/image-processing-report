@@ -73,3 +73,11 @@
 %J Computer
 %N 6
 %P 8-19
+
+%K huffman
+%T A Method for the Construction of Minimum-Redundancy Codes
+%A David A. Huffman
+%D 1962
+%J Proceedings of IRE
+%N 40
+%P 1098-1101
