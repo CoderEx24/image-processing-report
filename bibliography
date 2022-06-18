@@ -65,3 +65,11 @@
 %D 1990
 %I IEEE Computer Society Press
 %C Los Alamitos, California
+
+%K lzw
+%T A technique for high-preformance data compression
+%A Terry A. Welch
+%D 1984
+%J Computer
+%N 6
+%P 8-19
