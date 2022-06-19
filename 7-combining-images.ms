@@ -63,7 +63,6 @@ a sequence of images can be defined as follows
 h sub t = (1 - t)f + tg
 .EN
 .EQ
-t belong to [0, 1]
 .EN
 when $t = 0$, $h sub 0 = f$
 when $t = 1$, $h sub 1 = g$
@@ -72,9 +71,54 @@ each point of the resulting images is a weighted average from the two other imag
 an example of cross-dissolving is shown in figure 7.1
 .NH 2
 Combining Images by Decomposing the Domain
+.PP
+Another way of combining images,
+is by putting different parts of different images.
+that is,
+given a set of images $f sub n$ defined on the same images support $U$,
+the image support $U$ is 
+.I "decomposed" into
+m subsets $U sub 1, U sub 2, ..., U sub m$.
+each image of $f sub i$ is associated with a subset of the image support $U sub i$,
+so that only that part of that image in $U sub i$ appears in the output image.
+.PP
+At the first glance,
+algebraic combining and combining by domain decomposition seem like two different methods of image combination,
+but they are actually the same.
+Given a decomposition of the domain $U$ into m subsets,
+one can define the following
+.I "charactaristic function" 
+$chi sub {U sub i}$
+.EQ
+definition of chi 
+.EN
+
+The resulting image can be defined as a linear combination of the images $f sub i$, 
+using the functions $chi sub {U sub i}$ as weights.
+the functions $chi sub {U sub i}$ defines a (discontinuous) partition of unity of the image support $U$.
+.PP
+There seems like there are multiple ways of decomposing the domain of images.
+but a natural one, 
+is to decompose the domain into a 
+.I "foreground"
+and a 
+.I "background" .
+The foreground is where the 
+.I "main objects"
+are located.
+and the background serves as a 
+.I "visual aid"
+for the foreground.
+Dividing the image support into a foreground and background has the effect of decomposing the domain into two subsets $U sub f$ and $U sub b$.
+the output image can be defined as 
+.EQ
+definition of image by foreground-background decomposition
+.EN
+This operation is refered to as
+.I "overlaying"
+$f sub 1$ on $f sub 2$.
+Overlaying can be defined as a partition of unity by the two functions $alpha sub f = chi sub {U sub f}$ and $alpha sub b = 1 - {alpha sub f}$.
 .NH 2
 Computation of the Opacity Function
 .NH 2
 Compositing in the Discrete Domain
-.NH 2
-Compositing Operations
