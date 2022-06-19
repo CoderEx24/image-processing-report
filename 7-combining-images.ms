@@ -69,6 +69,8 @@ when $t = 1$, $h sub 1 = g$
 for other values, 
 each point of the resulting images is a weighted average from the two other images at the same point.
 an example of cross-dissolving is shown in figure 7.1
+.PDFPIC "7-1.pdf"
+.B "Figure 7.1"
 .NH 2
 Combining Images by Decomposing the Domain
 .PP
@@ -90,7 +92,6 @@ one can define the following
 .I "charactaristic function" 
 $chi sub {U sub i}$
 .EQ
-definition of chi 
 .EN
 
 The resulting image can be defined as a linear combination of the images $f sub i$, 
@@ -118,6 +119,52 @@ This operation is refered to as
 .I "overlaying"
 $f sub 1$ on $f sub 2$.
 Overlaying can be defined as a partition of unity by the two functions $alpha sub f = chi sub {U sub f}$ and $alpha sub b = 1 - {alpha sub f}$.
+.NH 2
+Combining Images in the Discrete Domain
+.PP
+We mentioned that in combining images,
+the images must have the same image support and takes values in the same color space.
+In the discrete domain,
+the images must be discretized using the same grid and the color information must be quantized using the same number of bits.
+.PP
+when combining images using mixing or cross-dissolving.
+combination of images in the discrete domain is trivial, 
+we just work pixel by pixel.
+combining the sampled values of each image.
+.PP
+However, 
+when combining by domain decomposition like foreground-background decomposition,
+we need to consider how the domain subsets behave inside each pixel.
+In the continuous domain,
+a point is either in the foreground or the background.
+But, in the discrete domain,
+a pixel can lay in the boundary of the subsets.
+This is a sampling problem.
+Pixels in the boundary needs special treating,
+in order to reduce artifacts.
+.PP
+In order to figure out how to deal with the pixels in the boundary.
+the notion of overlaying images is extended by defining 
+.I "the opacity function"
+that defines how opaque the pixel is.
+using the opacity function,
+overlaying can be thought of as having different opacities of the foreground in different parts of the image.
+foreground pixels have an opacity of $alpha sub f = 1$,
+background pixels have an opacity of $alpha sub f = 0$.
+and most importantly,
+pixels that lay between the foreground and background have opacity equal to the fraction of the area laying in the opaque region.
+using the opacity function,
+overlaying can be defined as follows
+.EQ
+f = alpha f sub 1 + ( 1 - alpha ) f sub 2
+.EN
+this extended definition allows for greater versatility in overlaying.
+.PP
+Since the notion of opacity is very useful.
+ususally,
+opacity information of each pixel is stored in the image itself.
+Images that allow for opacity store their color as $( {alpha} r, alpha g, alpha b, {alpha} )$,
+where $0 <= alpha <= 1$ is the opacity of the pixel.
 .NH 2
 Computation of the Opacity Function
 .NH 2
