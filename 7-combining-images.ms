@@ -167,5 +167,30 @@ Images that allow for opacity store their color as $( {alpha} r, alpha g, alpha 
 where $0 <= alpha <= 1$ is the opacity of the pixel.
 .NH 2
 Computation of the Opacity Function
+.PP
+Now that opacity has been defined,
+methods of calculating it must be specified.
+How opacity is calculated depends on the type of image.
+.SH
+Synthetic Two-Dimensional Images
+.PP
+These are images created using a drawing software.
+usually,
+these programs allows the user to specify the opacity of a strock along the color.
+.SH
+Synthetic Three-Dimensional Images
+.PP
+These are images created using a modeling software.
+Since the software has access to the geometric data of the scene,
+the opacity can be determined accuratly.
+.SH
+Scanned Images
+.PP
+Scanned images are images that are captured from the real world,
+like a photograph.
+Scanned images contains no information but color.
+So,
+if opacity is desired,
+it must be deduced from the image's color information.
 .NH 2
 Compositing in the Discrete Domain
