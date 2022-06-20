@@ -1,3 +1,7 @@
+.R1
+no-label-in-reference
+accumulate
+.R2
 .EQ
 delim $$
 .EN
@@ -62,8 +66,6 @@ a sequence of images can be defined as follows
 .EQ
 h sub t = (1 - t)f + tg
 .EN
-.EQ
-.EN
 when $t = 0$, $h sub 0 = f$
 when $t = 1$, $h sub 1 = g$
 for other values, 
@@ -80,7 +82,7 @@ that is,
 given a set of images $f sub n$ defined on the same images support $U$,
 the image support $U$ is 
 .I "decomposed" into
-m subsets $U sub 1, U sub 2, ..., U sub m$.
+m subsets ${U sub 1}, {U sub 2}, ..., {U sub m}$.
 each image of $f sub i$ is associated with a subset of the image support $U sub i$,
 so that only that part of that image in $U sub i$ appears in the output image.
 .PP
@@ -92,10 +94,20 @@ one can define the following
 .I "characteristic function" 
 $chi sub {U sub i}$
 .EQ
+chi sub {U sub i}(x, y) = left { pile {
+1 ~~~ (x, y) ~ \[u2208] ~ {U sub i}
+above
+0 ~~~ (x, y) ~ \[u2209] ~ {U sub i}
+}
+
+""
 .EN
 
 The resulting image can be defined as a linear combination of the images $f sub i$, 
-using the functions $chi sub {U sub i}$ as weights.
+using the functions $chi sub {U sub i}$ as weights
+.EQ
+f = sum from i { chi sub {U sub i} {f sub i} }
+.EN
 the functions $chi sub {U sub i}$ defines a (discontinuous) partition of unity of the image support $U$.
 .PP
 It may also seem like there are multiple ways of decomposing the domain of images.
@@ -113,7 +125,10 @@ for the foreground.
 Dividing the image support into a foreground and background has the effect of decomposing the domain into two subsets $U sub f$ and $U sub b$.
 The output image can be defined as 
 .EQ
-definition of image by foreground-background decomposition
+f(x, y) = left { pile { { f sub 1 (x, y) ~~~ (x, y) ~ \[u2208] ~ { U sub f } }  
+above
+{ { f sub 2 (x, y) ~~~ (x, y) ~ \[u2208] ~ { U sub g } } } }
+ ""
 .EN
 This operation is refered to as
 .I "overlaying"
@@ -134,7 +149,8 @@ combining the sampled values of each image.
 .PP
 However, 
 when combining by domain decomposition like foreground-background decomposition,
-we need to consider how the domain subsets behave inside each pixel.
+we need to consider how the domain subsets behave inside each pixel (this is referred to as 
+.I "pixel geometry" ")."
 In the continuous domain,
 a point is either in the foreground or the background.
 But, in the discrete domain,
@@ -194,3 +210,43 @@ if opacity is desired,
 it must be deduced from the image's color information.
 .NH 2
 Compositing in the Discrete Domain
+.PP
+when combining two images $f$ and $g$ in the discrete domain,
+we need to combine their alpha channel.
+The alpha channel doesn't remember the pixel geometry,
+it only stores the fraction of the pixel that is opaque.
+Therefore,
+assumptions has to be made in order to combine the alpha channels.
+Figure 7.2
+.[
+main
+.]
+shows 3 possible pixel geometries,
+in (a),
+the regions don't overlap.
+in (b),
+one region is completely contained in the other.
+in (c),
+the two regions partially interset.
+Figure 7.2(c) shows the general pixel geometry,
+which we use to calculate the opacity of the resulting pixel.
+.PP
+the general pixel geometry consists of 4 regions.
+$f inter g$, 
+$f bar inter g$,
+$f inter g bar$,
+$f bar inter g bar$,
+where the bar indicates set complement (see figure 7.3).
+the opacity of each region calculated as follows
+.IP 1
+for $f inter g$, $alpha = { alpha sub f } { alpha sub g }$
+.IP 2
+for $f bar inter g$, $alpha = (1 - { alpha sub f }) { alpha sub g }$
+.IP 3
+for $f inter g bar$, $alpha = { alpha sub f } (1 - { alpha sub g })$
+.IP 4
+for $f bar inter g bar$, $alpha = (1 - { alpha sub f }) (1 - { alpha sub g })$
+.PDFPIC "7-2.pdf"
+.B "Figure 7.2, Possible Pixel Geometries"
+.PDFPIC "7-3.pdf"
+.B "Figure 7.3, Regions of the General Pixel Geometries"
