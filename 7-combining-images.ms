@@ -1,23 +1,19 @@
-.R1
-no-label-in-reference
-accumulate
-.R2
 .EQ
 delim $$
 .EN
 .NH
-Images can be combined
+Images Can Be Combined
 .PP
 There are a a lot of situations where combining images is desired.
 In graphics design,
 artists usually create parts of the scene individually and then combine them into a single images.
 In the movie industries,
-scenes are shot indoors and then superimpose onto a suitable background.
+scenes are shot indoors and then superimposed onto a suitable background.
 Here, 
-discuss methods used to combine images.
+methods used to combine images are discussed.
 .PP
 when combining images,
-two conditions must be met on those images:-
+two conditions must be met:-
 .IP 1 3
 the images must be defined on the same support (i.e. they must have the same dimensions)
 .IP 2
@@ -25,9 +21,9 @@ the images must take values on the same color space
 .NH 2
 Combining Images Algebraically
 .PP
-Since images form a vector space,
+Images form a vector space,
 one method of combining images is linear combination.
-Given the images $f sub n$,
+where, given the images $f sub n$,
 the composite image $f$ can be defined as follows
 .EQ
 f = sum from i { {c sub i} {f sub i} } 
@@ -47,7 +43,7 @@ $alpha sub i (x, y) >= 0$
 .IP 2
 $sum from i {alpha sub i} = 1$
 .PP
-if the functions $alpha sub i$ doesn't satisfy these condtions, then new functions $beta sub i$ can be defined as follows
+if the functions $alpha sub i$ do not satisfy these condtions, then new functions $beta sub i$ can be defined as follows
 .EQ
 beta sub i = {alpha sub i} over { sum from i { alpha sub i } }
 .EN
@@ -66,11 +62,13 @@ a sequence of images can be defined as follows
 .EQ
 h sub t = (1 - t)f + tg
 .EN
+.EQ
+.EN
 when $t = 0$, $h sub 0 = f$
 when $t = 1$, $h sub 1 = g$
 for other values, 
 each point of the resulting images is a weighted average from the two other images at the same point.
-an example of cross-dissolving is shown in figure 7.1
+an example of cross-dissolving is shown in Figure 7.1
 .PDFPIC "7-1.pdf"
 .B "Figure 7.1"
 .NH 2
@@ -82,36 +80,26 @@ that is,
 given a set of images $f sub n$ defined on the same images support $U$,
 the image support $U$ is 
 .I "decomposed" into
-m subsets ${U sub 1}, {U sub 2}, ..., {U sub m}$.
+m subsets $U sub 1, U sub 2, ..., U sub m$.
 each image of $f sub i$ is associated with a subset of the image support $U sub i$,
 so that only that part of that image in $U sub i$ appears in the output image.
 .PP
 At the first glance,
-algebraic combining and combining by domain decomposition seem like two different methods of image combination,
-but they are actually the same.
+algebraic combining and combining by domain decomposition may seem like two different methods of image combination,
+but in reality, they are the same.
 Given a decomposition of the domain $U$ into m subsets,
 one can define the following
-.I "charactaristic function" 
+.I "characteristic function" 
 $chi sub {U sub i}$
 .EQ
-chi sub {U sub i}(x, y) = left { pile {
-1 ~~~ (x, y) ~ \[u2208] ~ {U sub i}
-above
-0 ~~~ (x, y) ~ \[u2209] ~ {U sub i}
-}
-
-""
 .EN
 
 The resulting image can be defined as a linear combination of the images $f sub i$, 
-using the functions $chi sub {U sub i}$ as weights
-.EQ
-f = sum from i { chi sub {U sub i} {f sub i} }
-.EN
+using the functions $chi sub {U sub i}$ as weights.
 the functions $chi sub {U sub i}$ defines a (discontinuous) partition of unity of the image support $U$.
 .PP
-There seems like there are multiple ways of decomposing the domain of images.
-but a natural one, 
+It may also seem like there are multiple ways of decomposing the domain of images.
+but a natural way, 
 is to decompose the domain into a 
 .I "foreground"
 and a 
@@ -123,12 +111,9 @@ and the background serves as a
 .I "visual aid"
 for the foreground.
 Dividing the image support into a foreground and background has the effect of decomposing the domain into two subsets $U sub f$ and $U sub b$.
-the output image can be defined as 
+The output image can be defined as 
 .EQ
-f(x, y) = left { pile { { f sub 1 (x, y) ~~~ (x, y) ~ \[u2208] ~ { U sub f } }  
-above
-{ { f sub 2 (x, y) ~~~ (x, y) ~ \[u2208] ~ { U sub g } } } }
- ""
+definition of image by foreground-background decomposition
 .EN
 This operation is refered to as
 .I "overlaying"
@@ -149,8 +134,7 @@ combining the sampled values of each image.
 .PP
 However, 
 when combining by domain decomposition like foreground-background decomposition,
-we need to consider how the domain subsets behave inside each pixel (this is referred to as 
-.I "pixel geometry" ")."
+we need to consider how the domain subsets behave inside each pixel.
 In the continuous domain,
 a point is either in the foreground or the background.
 But, in the discrete domain,
@@ -192,13 +176,13 @@ Synthetic Two-Dimensional Images
 .PP
 These are images created using a drawing software.
 usually,
-these programs allows the user to specify the opacity of a strock along the color.
+these programs allows the user to specify the opacity of a stroke along the color.
 .SH
 Synthetic Three-Dimensional Images
 .PP
 These are images created using a modeling software.
 Since the software has access to the geometric data of the scene,
-the opacity can be determined accuratly.
+the opacity can be determined accurately.
 .SH
 Scanned Images
 .PP
@@ -213,21 +197,21 @@ Compositing in the Discrete Domain
 .PP
 when combining two images $f$ and $g$ in the discrete domain,
 we need to combine their alpha channel.
-The alpha channel doesn't remember the pixel geometry,
-it only stores the fraction of the pixel that is opaque.
+The alpha channel does not remember the pixel geometry,
+as it only stores the fraction of the pixel that is opaque.
 Therefore,
-assumptions has to be made in order to combine the alpha channels.
+several assumptions has to be made in order to combine the alpha channels.
 Figure 7.2
 .[
 main
 .]
 shows 3 possible pixel geometries,
 in (a),
-the regions don't overlap.
+the regions do not overlap.
 in (b),
 one region is completely contained in the other.
 in (c),
-the two regions partially interset.
+the two regions partially intersect.
 Figure 7.2(c) shows the general pixel geometry,
 which we use to calculate the opacity of the resulting pixel.
 .PP
@@ -237,7 +221,7 @@ $f bar inter g$,
 $f inter g bar$,
 $f bar inter g bar$,
 where the bar indicates set complement (see figure 7.3).
-the opacity of each region calculated as follows
+the opacity of each region is calculated as follows
 .IP 1
 for $f inter g$, $alpha = { alpha sub f } { alpha sub g }$
 .IP 2
