@@ -2,18 +2,18 @@
 delim $$
 .EN
 .NH
-Images can be combined
+Images Can Be Combined
 .PP
 There are a a lot of situations where combining images is desired.
 In graphics design,
 artists usually create parts of the scene individually and then combine them into a single images.
 In the movie industries,
-scenes are shot indoors and then superimpose onto a suitable background.
+scenes are shot indoors and then superimposed onto a suitable background.
 Here, 
-discuss methods used to combine images.
+methods used to combine images are discussed.
 .PP
 when combining images,
-two conditions must be met on those images:-
+two conditions must be met:-
 .IP 1 3
 the images must be defined on the same support (i.e. they must have the same dimensions)
 .IP 2
@@ -21,9 +21,9 @@ the images must take values on the same color space
 .NH 2
 Combining Images Algebraically
 .PP
-Since images form a vector space,
+Images form a vector space,
 one method of combining images is linear combination.
-Given the images $f sub n$,
+where, given the images $f sub n$,
 the composite image $f$ can be defined as follows
 .EQ
 f = sum from i { {c sub i} {f sub i} } 
@@ -43,7 +43,7 @@ $alpha sub i (x, y) >= 0$
 .IP 2
 $sum from i {alpha sub i} = 1$
 .PP
-if the functions $alpha sub i$ doesn't satisfy these condtions, then new functions $beta sub i$ can be defined as follows
+if the functions $alpha sub i$ do not satisfy these condtions, then new functions $beta sub i$ can be defined as follows
 .EQ
 beta sub i = {alpha sub i} over { sum from i { alpha sub i } }
 .EN
@@ -68,7 +68,7 @@ when $t = 0$, $h sub 0 = f$
 when $t = 1$, $h sub 1 = g$
 for other values, 
 each point of the resulting images is a weighted average from the two other images at the same point.
-an example of cross-dissolving is shown in figure 7.1
+an example of cross-dissolving is shown in Figure 7.1
 .PDFPIC "7-1.pdf"
 .B "Figure 7.1"
 .NH 2
@@ -85,11 +85,11 @@ each image of $f sub i$ is associated with a subset of the image support $U sub 
 so that only that part of that image in $U sub i$ appears in the output image.
 .PP
 At the first glance,
-algebraic combining and combining by domain decomposition seem like two different methods of image combination,
-but they are actually the same.
+algebraic combining and combining by domain decomposition may seem like two different methods of image combination,
+but in reality, they are the same.
 Given a decomposition of the domain $U$ into m subsets,
 one can define the following
-.I "charactaristic function" 
+.I "characteristic function" 
 $chi sub {U sub i}$
 .EQ
 .EN
@@ -98,8 +98,8 @@ The resulting image can be defined as a linear combination of the images $f sub 
 using the functions $chi sub {U sub i}$ as weights.
 the functions $chi sub {U sub i}$ defines a (discontinuous) partition of unity of the image support $U$.
 .PP
-There seems like there are multiple ways of decomposing the domain of images.
-but a natural one, 
+It may also seem like there are multiple ways of decomposing the domain of images.
+but a natural way, 
 is to decompose the domain into a 
 .I "foreground"
 and a 
@@ -111,7 +111,7 @@ and the background serves as a
 .I "visual aid"
 for the foreground.
 Dividing the image support into a foreground and background has the effect of decomposing the domain into two subsets $U sub f$ and $U sub b$.
-the output image can be defined as 
+The output image can be defined as 
 .EQ
 definition of image by foreground-background decomposition
 .EN
@@ -176,13 +176,13 @@ Synthetic Two-Dimensional Images
 .PP
 These are images created using a drawing software.
 usually,
-these programs allows the user to specify the opacity of a strock along the color.
+these programs allows the user to specify the opacity of a stroke along the color.
 .SH
 Synthetic Three-Dimensional Images
 .PP
 These are images created using a modeling software.
 Since the software has access to the geometric data of the scene,
-the opacity can be determined accuratly.
+the opacity can be determined accurately.
 .SH
 Scanned Images
 .PP
