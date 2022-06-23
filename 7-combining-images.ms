@@ -1,6 +1,11 @@
 .EQ
 delim $$
 .EN
+.XS
+Images can be combined
+.XA
+Combining Images Algebraically
+.XE
 .NH
 Images Can Be Combined
 .PP
