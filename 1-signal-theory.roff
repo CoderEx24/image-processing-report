@@ -13,20 +13,21 @@ The sense of sight relies on light signals the sense of hearing and ability to c
 and the sense of smell relies on scent signals.
 .NH 2
 Mathematical models for signals
+.PP
 Geometric transformation is a crucial idea to grasp in both image processing and computer graphics.
 Understanding the imaging model and image generation via
 camera, printer, or projector is essential.
 we are going to represent one model and just mention the others
-.LI 1
+.IP 1
 Translation.
-.LI 2
+.IP 2
 Scaling.
-.LI 3
+.IP 3
 Rotation
 .PP
 In the third fundamental transformation,
 rotation,
-a point is rotated through a user-specified concerning the origin of the Cartesian coordinate system to translate its location (x, y) onto another point P′ with position (x′, y′) in an output picture.
+a point is rotated through a user-specified concerning the origin of the Cartesian coordinate system to translate its location $(x, y)$ onto another point $P'$ with position $(x', y')$ in an output picture.
 The most frequent uses of rotation are either to enhance the aesthetic appeal of a picture or as a preprocessor in applications using directional operators.
 .NH 2
 Linear representation of signals
@@ -45,19 +46,19 @@ Signal space and representation space are naturally related via a linear represe
 .NH 2
 Operations on signals
 .PP
-A map $T: R sup m x S sup 2 —> S'$
-into a signal space S' (which may be different) is an operation on a signal space S.
+A map $T: R sup m times S sup 2 -> S'$
+into a signal space $S'$ (which may be different) is an operation on a signal space S.
 As previously said, since a signal space is a vector space, 
-there are two natural operations: addition of signals, defined by the operation $S times S —> S$
+there are two natural operations: addition of signals, defined by the operation $S times S -> S$
 by the formula
 .EQ
 (f ~ + ~ g) (t) ~ = ~ f(t) ~ + ~ g(t)
 .EN
 and multiplication of a signal by a scalar, described by the formula 
 .EQ
-   (λf) (t) ~ = ~ λf(t)
+({lambda} f) (t) ~ = ~ lambda f(t)
 .EN
-Where $f: U \[u2282] R sup m -> R$
+Where $f: U ~ \[u2282] ~ R sup m ~ -> ~ R$
 
 By combining these processes, 
 we may, for instance, establish the linear interpolation between two signals f and g, 
@@ -81,14 +82,15 @@ Lattices are first defined.
 Take a nonzero length for each axis $x sub i$ of $R sub n$ take a nonzero length $Delta x sub i$ the collection of points supplied by $R sub n$ is  
 Under point sampling, information is typically lost. 
 Here, two issues are of particular interest:
-.LI *
+.IP *
 Under what circumstances can we do point sampling without losing information? To put it another way, at what point is it possible to reconstruct the signal f from its sample sequence?
-.LI *
-How can the original signal be recreated from the samples, 
-assuming the sampling was lossless? Which interpolation technique ought to be applied?
+.IP *
+How can the original signal be recreated from the samples,assuming the sampling was lossless? 
+Which interpolation technique ought to be applied?
+
 This leads us to the conclusion that in order to identify the appropriate filter, 
 we must examine the frequencies of the sampled signal. 
 To achieve this, we will require several findings on Fourier transforms
 .[
-shannon
+signals
 .]
