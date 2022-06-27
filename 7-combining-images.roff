@@ -1,10 +1,5 @@
-.XS
-Images can be combined
-.XA
-Algebraic Combination
-.XE
 .NH
-Images Can Be Combined
+.XN "Images Can Be Combined"
 .PP
 There are a a lot of situations where combining images is desired.
 In graphics design,
@@ -21,7 +16,7 @@ the images must be defined on the same support (i.e. they must have the same dim
 .IP 2
 the images must take values on the same color space
 .NH 2
-Combining Images Algebraically
+.XN "Combining Images Algebraically"
 .PP
 Images form a vector space,
 one method of combining images is linear combination.
@@ -74,7 +69,7 @@ an example of cross-dissolving is shown in Figure 7.1
 .PSPIC "./7-1.ps"
 .B "Figure 7.1"
 .NH 2
-Combining Images by Decomposing the Domain
+.XN "Combining Images by Decomposing the Domain"
 .PP
 Another way of combining images,
 is by putting different parts of different images.
@@ -134,7 +129,7 @@ This operation is refered to as
 $f sub 1$ on $f sub 2$.
 Overlaying can be defined as a partition of unity by the two functions $alpha sub f = chi sub {U sub f}$ and $alpha sub b = 1 - {alpha sub f}$.
 .NH 2
-Combining Images in the Discrete Domain
+.XN "Combining Images in the Discrete Domain"
 .PP
 We mentioned that in combining images,
 the images must have the same image support and takes values in the same color space.
@@ -180,7 +175,7 @@ opacity information of each pixel is stored in the image itself.
 Images that allow for opacity store their color as $( {alpha} r, alpha g, alpha b, {alpha} )$,
 where $0 <= alpha <= 1$ is the opacity of the pixel.
 .NH 2
-Computation of the Opacity Function
+.XN "Computation of the Opacity Function"
 .PP
 Now that opacity has been defined,
 methods of calculating it must be specified.
@@ -207,7 +202,7 @@ So,
 if opacity is desired,
 it must be deduced from the image's color information.
 .NH 2
-Compositing in the Discrete Domain
+.XN "Compositing in the Discrete Domain"
 .PP
 when combining two images $f$ and $g$ in the discrete domain,
 we need to combine their alpha channel.
