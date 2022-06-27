@@ -1,0 +1,23 @@
+.EQ
+delim $$
+.EN
+.R1
+no-label-in-reference
+accumulate
+.R2
+.TL
+A Report on Image Processing
+.AU
+Ahmed Sameh Ahmed Galal - 320210202
+.AU
+Yousef Ibrahim Gomaa Mahmoud - 320210207
+.AU
+Zyad Mohamed Abdelwares Aly - 320210213
+.AU
+Ahmed Fayez Ahmed Abdalhamed Amr - 320210249
+.AU
+Ramzy Mohamed Ahmed Ramzy Elhadad - 320210327
+.AU
+Kareem Hassanein Hassan Abdelkreem - 320210201
+.AU
+Shahd Bedier Muhammed Bedier - 320210199
