@@ -41,4 +41,62 @@ Such graphs are also useful in computer vision.
 .SH 
 Image Representation
 .PP
-
+In order to represent an image.
+The image needs to be sampled and quantized.
+The domain is sampled by taking a rectangle as the domain.
+.EQ
+U = [a,b] times [c,d]
+.EN
+then the numbers $delta x$ and $delta y$ are chosen.
+these are the sampling rate in the x and y axes recpectively.
+The domain is sampled using the following orthogonal
+.I lattice .
+.EQ
+left {
+(x sub j, y sub k) \[u2208] U ~ : ~ x sub j = j delta x, ~ y sub k = k del y, ~ j,k \[u2208] roman Z 
+right }
+.EN
+an example of such lattice is in figure 6.2.
+This allows for the representation of the image in a 
+.I "a matrix form" .
+Each entry of the matrix represents the value of $f$ at $(x sub j, ~ y sub k)$.
+Each entry is a vector in color space.
+If the image is monochrome,
+then the matrix contains real numbers as entries.
+The number of rows in the matrix is the
+.I "vertical resolution"
+of the image.
+The number of colums is the 
+.I "horizontal resolution" .
+The product of the horizontal and vertical resolutions is the
+.I "spatial or geometric resolution"
+of the image.The number of rows in the matrix is the
+.I "vertical resolution"
+of the image.
+The number of colums is the 
+.I "horizontal resolution" .
+The product of the horizontal and vertical resolutions is the
+.I "spatial or geometric resolution"
+of the image.The number of rows in the matrix is the
+.I "vertical resolution"
+of the image.
+The number of colums is the 
+.I "horizontal resolution" .
+The product of the horizontal and vertical resolutions is the
+.I "spatial or geometric resolution"
+of the image.
+Each row of the matrix is called a 
+.I scanline .
+Another important property of images is
+.I "resolution density" ,
+which is the number of pixels per unit length.
+Resolution density is usually measured in 
+.I "dots per inch" "(dpi)."
+Resolution density is used as a measure for the quality of the image.
+Another important property of digital images is 
+.I "color resolution"
+or
+.I "color depth" ,
+which is the number of bits used to store the color information of the image.
+higher color depths means more colors can be stored,
+and more storage space the image will take.
