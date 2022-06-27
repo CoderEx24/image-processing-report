@@ -31,7 +31,11 @@ we can geometrically graph the image function as follows
 .EQ
 G(f) = left { (x, y, z) ~ | ~ (x, y) ~ \[u2208] ~ U ~ and ~ z = f(x, y) right }
 .EN
-an example of such graph is shown in figure 6.1.
+an example of such graph is shown in figure 3.1.
+.PSPIC "./3-1.ps"
+.B "Figure 3.1, An image with the graph of its function"
+
+.PP
 The graph maps each point in the xy plane - which is the image's support,
 a height on the z axis corresponding to the intensity at the point.
 This kinds of graphs shows some aspects of the image.
@@ -47,16 +51,18 @@ The domain is sampled by taking a rectangle as the domain.
 .EQ
 U = [a,b] times [c,d]
 .EN
-then the numbers $delta x$ and $delta y$ are chosen.
+then the numbers $Delta x$ and $Delta y$ are chosen.
 these are the sampling rate in the x and y axes recpectively.
 The domain is sampled using the following orthogonal
 .I lattice .
 .EQ
 left {
-(x sub j, y sub k) \[u2208] U ~ : ~ x sub j = j delta x, ~ y sub k = k del y, ~ j,k \[u2208] roman Z 
+(x sub j, y sub k) \[u2208] U ~ : ~ x sub j = j ~ Delta x, ~ y sub k = k ~ Delta y, ~ j,k \[u2208] roman Z 
 right }
 .EN
-an example of such lattice is in figure 6.2.
+an example of such lattice is in figure 3.2.
+.PSPIC "./3-2.ps"
+.B "Figure 3.2, A graph of the sampling lattice"
 This allows for the representation of the image in a 
 .I "a matrix form" .
 Each entry of the matrix represents the value of $f$ at $(x sub j, ~ y sub k)$.
