@@ -1,7 +1,7 @@
 .NH
 .XN "Images can be compressed
 .PP
-Compression is an important toool in computer scinence,
+Compression is an important tool in computer scinence,
 it allows economic use of storage and network bandwidth.
 Here,
 we discuss the topic of image encoding and image compression.
@@ -18,6 +18,26 @@ Therefore,
 encoding is related to image compression.
 .SH
 Matrix Encoding
+.PP
+one way to encode an image,
+is to use the matrix representation discussed earlier.
+In such encoding,
+we store the color information of each pixel,
+and information about the image,
+such as color depth, geometric resolution and resolution density.
+.SH
+Run-Length Encoding
+.PP
+Run-Length Encoding is a encoding technique that can be used to reduce the amount of redundent information is a given file.
+It encodes repeated sequential data as lengths of intervals.
+For example,
+the line "aaaabbbb" will be encoded as "4a4b".
+Run-Length Encoding can be a good compression technique given that the data has a lot of redundency in them.
+.PP
+In images,
+it is common that the same region has only one color.
+Therefore,
+it could be beneficial to use run-length encoding to encode images.
 .NH 2
 .XN "Image Compression"
 .NH 2
