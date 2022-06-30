@@ -32,6 +32,28 @@ However, in this report, we will go in depth in other matters such as
 .I "color systems."
 .NH 2
 .XN "Color Systems"
+.PP
+color system is a color solid 
+(spectral color space that consists of functions of all spectral distributions)
+where a color vector in such system can be written as
+.EQ
+C = sum from {i = 0} to n { {c sub i} {P sub i} }
+.EN
+whose coordinates are $({c sub 1}, ..., {c sub n})$
+.PP
+Generally, 
+color conversion between systems can be a tedious process, 
+such as the reduction to a change of basis in a vector space as in
+.EQ
+{ Q sub i} = sum from {i = 0} to n {{a sub {ij}} {P sub j}}
+.EN
+
+Then after a change of primaries would be: (if donated by ($a sub {ij}$))
+.EQ
+{P sub i}(lambda) = sum from { i = 0 } to n { { a sub { ij } } { Q sub i }(lambda) }
+.EN
+
+where ${P sub i}(lambda)$ and ${Q sub i}(lambda)$ are color construction functions.
 .NH 2
 .XN "Examples of Color Systems"
 .NH 3
