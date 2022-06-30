@@ -39,8 +39,76 @@ and for regions of low freqencies (i.e. the color doesn't change too rapidly for
 there can be redundency in the image's scanlines.
 Therefore,
 using run-length encoding help reduce the amount of storage needed for the image.
+.SH
+Entropy Encoding
+.PP
+To determine with encoding scheme is best in a certian situation,
+a method is needed in order to compare how well each encoding scheme reduces the amount of storage needed to encode the message.
+A branch of computer science,
+called information theory,
+studies this problem.
+.[
+main
+.]
+.PP
+In order to encode a message (or an image),
+An alphabet is needed.
+Each alphabet element has a certian probability of occuring in the message.
+In information theory,
+we define a quantity called
+.I "information"
+for each letter.
+It measures the amount of information a certian element of the alphabet carries,
+which is defined as follows
+.EQ
+I({f sub k}) = - log ({p sub k})
+.EN
+where $p sub k$ is the probability of the kth element in the alphabet.
+
+Information is inversely propotional to probability.
+An alphabet element that occurs more often,
+has a higher probability of occuring,
+and carries fewer information.
+However,
+an element that occurs less frequently,
+has a lower probability and carries more information.
+However,
+an element that occurs less frequently,
+has a lower probability and carries more information.
+.PP
+To determine the amount of information carried in a message,
+we sum the amount of information carried every alphabet element.
+The
+.I "entropy"
+of a message is defined as
+.EQ
+E = - sum from { i = 0 } to { L - 1 } { {p sub k} log ({p sub k}) }
+.EN
+where $L$ is the number of symbols in the alphabet.
+.PP
+Given a message,
+we encode it by associating each alphabet element with a
+.I "codeword" ,
+which is a binary string.
+The number of bits used in encoding a codeword can be constant,
+or it can vary depending on the alphabet element it encodes.
+a variable codeword length is said to be 
+.I "adaptive" .
+In order to achieve compactness,
+it makes sense to encode more frequent alphabet element using shorter codewords.
+.SH
+Huffman Encoding
+.PP
+Huffman encoding is very popular type of encoding.
+It uses the probability distruibution of the data in order to come up with an encoding that has the minimum
+.I "average codeword lengths" .
+.[
+huffman
+.]
 .NH 2
 .XN "Image Compression"
+Image compression is important in a lot of practical applications.
+When dealing with images,
 .NH 2
 .XN "Examples of Image Compression"
 .NH 3
