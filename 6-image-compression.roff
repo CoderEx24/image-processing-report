@@ -108,8 +108,33 @@ huffman
 .]
 .NH 2
 .XN "Image Compression"
+.PP
 Image compression is important in a lot of practical applications.
 When dealing with images,
+it's important to have optimal encoding for storage and sharing.
+Images often contain 
+.I "coherent data" .
+Thus, they contains lots of redundancy that can be minimized.
+.PP
+There are 2 broad categories of data compression
+.IP *
+Lossless compression
+
+This type of compression encodes all of the input data,
+in such a way that all the data can be reconstructed.
+This type of compression is used when the preservation of all of the data is essential.
+In images,
+lossless compression is used in the case where preservation of the original quality is essential.
+.IP *
+Lossy compression.
+
+This type of compression encodes the input data in such a way that,
+some of the original data is lost,
+when decompressing a lossy compressed data,
+the output is a good enough approximation of the original data.
+This type of compression is widely used when sharing images across the internet.
+Althoough lossy compression results in reduction of the quality of the image.
+this loss is ususally negligable.
 .NH 2
 .XN "Examples of Image Compression"
 .NH 3
