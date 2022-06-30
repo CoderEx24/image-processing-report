@@ -139,5 +139,51 @@ this loss is ususally negligable.
 .XN "Examples of Image Compression"
 .NH 3
 .XN "PNG"
+.PP
+PNG is a lossless image compression scheme.
+It is used in situations where image quality is top priority.
+PNG uses a compression algorithm called LZW
+.[
+lzw
+.]
+which uses the idea of 
+.I "back-referencing"
+in order to compressed data.
+LZW uses earlier segments of data in order to encode these segments when they occur again.
+PNG is lossless,
+meaning that no loss of image quality takes place.
+PNG can be slightly less effective at compressing images.
 .NH 3
 .XN "JPEG"
+.PP
+JPEG is a very popular image format.
+It's used extensivly in the internet,
+and it greatly fasilitated sharing images on the internet.
+JPEG uses a lossy compression algorithms.
+JPEG uses 2 important facts about how the human eyes precive color in order to be effecitive
+.IP 1
+The human eye is insenstive to high freqencies (i.e. rapid variation or color)
+.IP 2
+The human eye is more senstive to brightness than to hue
+.PP
+With these 2 facts at hand,
+JPEG reduces the amount of color information in the image,
+through conversion to $Y {C sub b} {C sub r}$ color system and chroma subsampling.
+Then, it applies the Discrete Cosine Transform in order to lossy compress color and brightness information.
+Color is compressed more than brightness,
+beacause, as mentioned earlier, the human eye is less sensitive to variations of color
+.IP 2
+The human eye is more senstive to brightness than to hue
+.PP
+With these 2 facts at hand,
+JPEG reduces the amount of color information in the image,
+through conversion to $Y {C sub b} {C sub r}$ color system and chroma subsampling.
+Then, it applies the Discrete Cosine Transform in order to lossy compress color and brightness information.
+Color is compressed more than brightness,
+beacause, as mentioned earlier, the human eye is less sensitive to variations of color.
+Lastly, JPEG uses a modified version of Huffman encoding in order to losslessly compressed the image.
+JPEG causes a loss in image quality, 
+however, in most practical application,
+such loss is negligable.
+If image quality must be preserved exactly with no loss,
+PNG should be used.
