@@ -15,7 +15,7 @@ organized according to some data structure.
 When encoding,
 we try to use the fewest amount of storage.
 Therefore,
-encoding is related to image compression.
+encoding is related to compression.
 .SH
 Matrix Encoding
 .PP
@@ -32,12 +32,13 @@ Run-Length Encoding is a encoding technique that can be used to reduce the amoun
 It encodes repeated sequential data as lengths of intervals.
 For example,
 the line "aaaabbbb" will be encoded as "4a4b".
-Run-Length Encoding can be a good compression technique given that the data has a lot of redundency in them.
+Run-Length Encoding can be a good compression technique given that the data has a lot of redundency in it.
 .PP
 In images,
-it is common that the same region has only one color.
+and for regions of low freqencies (i.e. the color doesn't change too rapidly for small changes in the domain),
+there can be redundency in the image's scanlines.
 Therefore,
-it could be beneficial to use run-length encoding to encode images.
+using run-length encoding help reduce the amount of storage needed for the image.
 .NH 2
 .XN "Image Compression"
 .NH 2
