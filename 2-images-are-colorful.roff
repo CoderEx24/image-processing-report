@@ -50,10 +50,10 @@ such as the reduction to a change of basis in a vector space as in
 
 Then after a change of primaries would be: (if donated by ($a sub {ij}$))
 .EQ
-{P sub i}(lambda) = sum from { i = 0 } to n { { a sub { ij } } { Q sub i }(lambda) }
+{P sub i}( lambda ) = sum from { i = 0 } to n { { a sub { ij } } { Q sub i }( lambda ) }
 .EN
 
-where ${P sub i}(lambda)$ and ${Q sub i}(lambda)$ are color construction functions.
+where ${P sub i}( lambda )$ and ${Q sub i}( lambda )$ are color construction functions.
 .NH 2
 .XN "Examples of Color Systems"
 .PP
@@ -103,7 +103,7 @@ lambda sub B = 435 ~ nm
 
 These values then allow us to obtain an image of the spectral colors in color space, represented as
 .EQ
-phi (lambda) = ({lambda sub R}, {lambda sub G}, {lambda sub B})
+phi ( lambda ) = ({lambda sub R}, {lambda sub G}, {lambda sub B})
 .EN
 .PP
 When the brightness of certain colors is mixed or combined,
@@ -113,3 +113,14 @@ Not only that, but also in the CIE-RGB representation, the color reconstruction 
 whose existence is reflected in the chromaticity diagram too.
 .NH 3
 .XN "HSV"
+.PP
+This system derives its name from the parameters hue, saturation, and value, which is the magnitude of the corresponding brightness in the system, defined in terms of the max RGB system.
+Value of a color can be calculated from the equation
+.EQ
+V(C) = max left { {C sub R}, {C sub G}, {C sub B} right }
+.EN
+
+where the color solid in the mRGB is a unit cube
+
+This method is performed as the user specifies a color by choosing its coordinates and then involving the perceptual parameters. 
+This system is widely used in computer graphics and in the color industry in general.
