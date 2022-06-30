@@ -56,7 +56,60 @@ Then after a change of primaries would be: (if donated by ($a sub {ij}$))
 where ${P sub i}(lambda)$ and ${Q sub i}(lambda)$ are color construction functions.
 .NH 2
 .XN "Examples of Color Systems"
+.PP
+In computer graphics we can single out four important types of color systems 
+.IP *
+standard systems
+.IP *
+device systems
+.IP *
+interface systems
+.IP *
+computational systems
+.PP
+Standard color systems’ importance lies in its ability to compare colors between different systems,
+its goal is to “establish paradigms that can be used as a base for defining color systems suited to particular applications."
+.[
+main
+.]
+.PP
+device systems are color systems that are associated with processing and input/output devices, 
+through them we send or receive color information, 
+while interface color systems allow the user to specifically select color information easily,
+they form the bridge between graphical devices and the user. 
+Lastly, computational color systems are mainly used to process calculations of the light energy in the area of image synthesis. 
 .NH 3
 .XN "RGB"
+.PP
+Color is represented in a reduction of the spectral color space to a finite-dimensional space,
+the human eye works as a receptor of a three-dimensional color perception,
+with sensors that sample the spectrum.
+Therefore, the color reconstruction system’s primary basis are those three colors.
+This system’s representation was adopted by the International Commission on illumination,
+naming it CIE-RGB representation. 
+.PP
+RGB defines a trichromatic color space, 
+whose primaries are in the low, middle, and high of the visible spectrum, or red, green, and blue respectively. 
+The wavelengths of these primary colors are
+.EQ
+lambda sub R = 700 ~ nm
+.EN
+.EQ
+lambda sub G = 546 ~ nm
+.EN
+.EQ
+lambda sub B = 435 ~ nm
+.EN
+
+These values then allow us to obtain an image of the spectral colors in color space, represented as
+.EQ
+phi (lambda) = ({lambda sub R}, {lambda sub G}, {lambda sub B})
+.EN
+.PP
+When the brightness of certain colors is mixed or combined,
+then additive principle of color mixing is performed,
+its units are adjusted in such a way that the chromaticity coordinates of white is the equivalency of the three spectrum colors.
+Not only that, but also in the CIE-RGB representation, the color reconstruction functions take on negative values,
+whose existence is reflected in the chromaticity diagram too.
 .NH 3
 .XN "HSV"
