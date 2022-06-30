@@ -8,5 +8,5 @@ all:
 	cat ./4-images-have-operations.roff >> /tmp/accum.roff
 	cat ./7-combining-images.roff >> /tmp/accum.roff
 	echo ".TC" >> /tmp/accum.roff
-	refer -p ./bibliography /tmp/accum.roff | groff -Uep -mspdf -Tps > output.ps
+	refer -Sp ./bibliography /tmp/accum.roff | groff -Uep -mspdf -Tps > output.ps
 	ps2pdf output.ps output.pdf
