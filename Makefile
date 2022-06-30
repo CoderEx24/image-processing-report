@@ -6,6 +6,7 @@ all:
 	cat ./2-images-are-colorful.roff >> /tmp/accum.roff
 	cat ./3-digital-images.roff >> /tmp/accum.roff
 	cat ./4-images-have-operations.roff >> /tmp/accum.roff
+	cat ./5-images-are-sampled.roff >> /tmp/accum.roff
 	cat ./6-image-compression.roff >> /tmp/accum.roff
 	cat ./7-combining-images.roff >> /tmp/accum.roff
 	echo ".TC" >> /tmp/accum.roff
